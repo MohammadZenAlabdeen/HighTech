@@ -16,7 +16,7 @@ class PharmacyApiController extends Controller
         $longitude = $request->input('longitude');
         $latitude = $request->input('latitude');
     
-        $pharmacies = Pharmacy::all();
+        $pharmacies = Pharmacy::where('state',true)->get();
         $pharmaciesWithDistance = [];
     
         foreach ($pharmacies as $pharmacy) {
